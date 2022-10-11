@@ -4,7 +4,9 @@ echo "--------------------------------------------------------------------------
 read INSTALLDIR
 if [ $INSTALLDIR == "" ]; then
   INSTALLDIR="$HOME/.local/bin"
-elif [ "${INSTALLDIR:0:1}" != "/" ]; then
+fi
+
+if [ "${INSTALLDIR:0:1}" != "/" ] && [ "${INSTALLDIR:0:1}" != "~" ]; then
   INSTALLDIR="$PWD/$INSTALLDIR"
 fi
 
