@@ -20,7 +20,7 @@ scroll-down = /path/to/mopidy-volume-control volume -d --step 2
 remember to remove the comments (in polybar config, comments are denoted with `;`, note that the semicolon in the 
 exec-if line is part of a sh command and not a polybar comment)
 
-If you want to add seek forward/backward buttons (eg, for skipping thru a podcast), add the following:
+If you want to add seek forward/backward buttons (eg, for skipping thru a podcast), refer to the following example:
 ```
 [module/mopidy-seek-backward]
 type = custom/script
@@ -29,6 +29,7 @@ exec-if = ps aux | grep mopidy-volume-server | grep -v grep
 format = <label>
 label = ◀
 click-left = /path/to/mopidy-volume-control seek -b -t 30
+click-right = /path/to/mopidy-volume-control seek -b -t 10
 
 [module/mopidy-seek-forward]
 type = custom/script
@@ -36,7 +37,8 @@ exec = echo " "
 exec-if = ps aux | grep mopidy-volume-server | grep -v grep
 format = <label>
 label = ▶
-click-left = /path/to//mopidy-volume-control seek -f -t 30
+click-left = /path/to/mopidy-volume-control seek -f -t 30
+click-right = /path/to/mopidy-volume-control seek -f -t 10
 ```
 
 ### Installation
