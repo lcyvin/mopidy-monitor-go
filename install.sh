@@ -1,9 +1,9 @@
 #!/bin/sh -i
-echo "Please enter an installation directory, or hit enter for default [$HOME/.local/bin]"
-echo "-----------------------------------------------------------------------------------"
 
 case $- in
 *i*)
+  echo "Please enter an installation directory, or hit enter for default [$HOME/.local/bin]"
+  echo "-----------------------------------------------------------------------------------"
   read -r INSTALLDIR # interactive shell
   if [ "$INSTALLDIR" = "" ]
   then
