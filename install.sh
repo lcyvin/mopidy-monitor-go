@@ -10,7 +10,7 @@ if [ "${INSTALLDIR:0:1}" != "/" ] && [ "${INSTALLDIR:0:1}" != "~" ]; then
   INSTALLDIR="$PWD/$INSTALLDIR"
 fi
 
-eval INSTALLDIR=$INSTALLDIR
+eval INSTALLDIR="$INSTALLDIR"
 
 if [ ! -d "$INSTALLDIR" ]; then
   mkdir -p $INSTALLDIR
