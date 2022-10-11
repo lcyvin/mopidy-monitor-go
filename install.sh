@@ -2,17 +2,20 @@
 echo "Please enter an installation directory, or hit enter for default [$HOME/.local/bin]"
 echo "-----------------------------------------------------------------------------------"
 read INSTALLDIR
-if [ $INSTALLDIR == "" ]; then
+if [ $INSTALLDIR == "" ] 
+then
   INSTALLDIR="$HOME/.local/bin"
 fi
 
-if [ "${INSTALLDIR:0:1}" != "/" ] && [ "${INSTALLDIR:0:1}" != "~" ]; then
+if [ "${INSTALLDIR:0:1}" != "/" ] && [ "${INSTALLDIR:0:1}" != "~" ] 
+then
   INSTALLDIR="$PWD/$INSTALLDIR"
 fi
 
 eval INSTALLDIR="$INSTALLDIR"
 
-if [ ! -d "$INSTALLDIR" ]; then
+if [ ! -d "$INSTALLDIR" ] 
+then
   mkdir -p $INSTALLDIR
 fi
 
