@@ -1,4 +1,4 @@
-# polybar-mopidy-volume-monitor
+# Mopidy Monitor
 ## A simple go program that monitors volume change events in mopidy/MPD for use in polybar. Can also be used to skip forward/back in podcasts and songs
 
 <p align="center">
