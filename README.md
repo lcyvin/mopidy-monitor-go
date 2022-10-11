@@ -10,7 +10,7 @@ Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related c
 
 ### Usage
 In your polybar config, add:
-```
+```ini
 [module/mopidy-volume]
 type = custom/script
 exec = "killall mopidy-volume-server &> /dev/null; /path/to/mopidy-volume-executable"
@@ -24,7 +24,8 @@ remember to remove the comments (in polybar config, comments are denoted with `;
 exec-if line is part of a sh command and not a polybar comment)
 
 If you want to add seek forward/backward buttons (eg, for skipping thru a podcast), refer to the following example:
-```
+```ini
+; using individual modules as opposed to one module with a huge format string to keep things clean
 [module/mopidy-seek-backward]
 type = custom/script
 exec = echo " "
