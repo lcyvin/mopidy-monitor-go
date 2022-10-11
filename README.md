@@ -62,6 +62,8 @@ your config file. Don't forget to add the modules to your bar config, eg:
 
 If the module gives an error or does not render, ensure that the server and client were installed into your user's ~/.local/bin folder.
 
+If for whatever reason you want the controls condensed into a single module, you can find an example config for that [here](polybar-config-singlemodule.ini). I do not recommend this, as it is much harder to debug/parse.
+
 In your polybar config, add:
 ```ini
 [module/mopidy-volume]
