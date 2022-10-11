@@ -1,7 +1,9 @@
 # polybar-mopidy-volume-monitor
 ## A simple go program that monitors volume change events in mopidy/MPD for use in polybar
 
-![screenshot of i3wm with polybar showing mopidy's internal volume](example.png)
+<p align="center">
+  <img max-height="500px" src="https://github.com/lcyvin/polybar-mopidy-volume-monitor/blob/main/example.png?raw=true" alt="i3wm with polybar showing a music player and the corresponding polybar output with application-specific volume and skip forward/backward buttons"/>
+</p>
 
 ### Usage
 In your polybar config, add:
