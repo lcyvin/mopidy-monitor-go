@@ -6,7 +6,7 @@ In your polybar config, add:
 ```
 [module/mopidy-volume]
 type = custom/script
-exec = "killall mopidy-volume &> /dev/null; /path/to/mopidy-volume-executable"
+exec = "killall mopidy-volume-server &> /dev/null; /path/to/mopidy-volume-executable"
 exec-if = pgrep -x mopidy; or mpd, setting this ensures the module doesn't show up if mopidy/mpd isn't running
 tail = true
 label = (%output%%); %output% is the token for the stdout values, the second percent and parens are just formatting
