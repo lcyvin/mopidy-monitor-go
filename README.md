@@ -19,7 +19,7 @@ curl -o- https://raw.githubusercontent.com/lcyvin/mopidy-monitor-go/main/install
 
 #### interactive
 ```sh
-curl -o- https://raw.githubusercontent.com/lcyvin/mopidy-monitor-go/main/install.sh > /tmp/install.sh && /bin/sh /tmp/install.sh && rm /tmp/install.sh
+curl -o- https://raw.githubusercontent.com/lcyvin/mopidy-monitor-go/main/install.sh > /tmp/install.sh && /bin/sh -i /tmp/install.sh && rm /tmp/install.sh
 ```
 
 ### - Download the binary
