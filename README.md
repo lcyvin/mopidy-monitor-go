@@ -20,12 +20,12 @@ In your polybar config, add:
 ```ini
 [module/mopidy-volume]
 type = custom/script
-exec = "killall mopidy-volume-server &> /dev/null; /path/to/mopidy-volume-executable"
+exec = "killall mopidy-monitor-go &> /dev/null; /path/to/mopidy-monitor-go"
 exec-if = pgrep -x mopidy; or mpd, setting this ensures the module doesn't show up if mopidy/mpd isn't running
 tail = true
 label = (%output%%); results in (XX%) output
-scroll-up = /path/to/mopidy-volume-control volume -i --step 2; step arg is optional, default is 2
-scroll-down = /path/to/mopidy-volume-control volume -d --step 2
+scroll-up = /path/to/mopidy-control-go volume -i --step 2; step arg is optional, default is 2
+scroll-down = /path/to/mopidy-control-go volume -d --step 2
 ```
 remember to remove the comments (in polybar config, comments are denoted with `;`, note that the semicolon in the 
 exec-if line is part of a sh command and not a polybar comment)
@@ -38,20 +38,20 @@ If you want to add seek forward/backward buttons (eg, for skipping thru a podcas
 [module/mopidy-seek-backward]
 type = custom/script
 exec = echo " "
-exec-if = ps aux | grep mopidy-volume-server | grep -v grep
+exec-if = ps aux | grep mopidy-monitor-go | grep -v grep
 format = <label>
 label = ◀
-click-left = /path/to/mopidy-volume-control seek -b -t 30
-click-right = /path/to/mopidy-volume-control seek -b -t 10
+click-left = /path/to/mopidy-control-go seek -b -t 30
+click-right = /path/to/mopidy-control-go seek -b -t 10
 
 [module/mopidy-seek-forward]
 type = custom/script
 exec = echo " "
-exec-if = ps aux | grep mopidy-volume-server | grep -v grep
+exec-if = ps aux | grep mopidy-monitor-go | grep -v grep
 format = <label>
 label = ▶
-click-left = /path/to/mopidy-volume-control seek -f -t 30
-click-right = /path/to/mopidy-volume-control seek -f -t 10
+click-left = /path/to/mopidy-control-go seek -f -t 30
+click-right = /path/to/mopidy-control-go seek -f -t 10
 ```
 
 ### Installation
