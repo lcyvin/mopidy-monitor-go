@@ -12,8 +12,14 @@ Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related c
 ### - Install script
 copy the following and run it in your terminal
 
+#### non-interactive (installs to ~/.local/bin)
 ```sh
 curl -o- https://raw.githubusercontent.com/lcyvin/mopidy-monitor-go/main/install.sh | /bin/sh
+```
+
+#### interactive
+```sh
+curl -o- https://raw.githubusercontent.com/lcyvin/mopidy-monitor-go/main/install.sh > /tmp/install.sh && /bin/sh /tmp/install.sh && rm /tmp/install.sh
 ```
 
 ### - Download the binary
