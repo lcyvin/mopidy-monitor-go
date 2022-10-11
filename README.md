@@ -30,9 +30,23 @@ Grab a binaries from a [specific release](https://github.com/lcyvin/mopidy-monit
 ### - Server
 run `mopidy-monitor-go`. It will output volume changes to STDOUT by default, if you do not need this function, add `&> /dev/null` to the command invocation
 ### - Client
-There are two commands provided by the client:
-- volume
-- seek
+There are two commands provided by the client, see below for details
+
+#### `volume`
+**Usage:** `mopidy-control-go volume` 
+
+If called without flags, increases volume by 2%
+- `-s | --step` value to increase or decrease volume by. When passed on its own, accepts negative values, when used with inc/dec flags, should be an absolute value
+- `-i | --increment` boolean flag, tells the controller to increment the volume by `step` or default of 2
+- `-d | --decrement` boolean flag, tells the controller to decrement the volume by `step` or default of 2
+
+#### `seek`
+**Usage:** `mopidy-control-go seek` 
+
+If called without flags, seeks 10 seconds ahead
+- `-i | --interval` value to seek by in seconds. When passed on its own, accepts negative values, when used with forward/backward flags, should be an absolute value
+- `-b | --backward` boolean flag, tells the controller to seek backward by `increment` amount or default of 10 seconds
+- `-f | --forward` boolean flag, tells the controller to seek forward by `increment` amount or default of 10 seconds
 
 ## Usage with Polybar
 You can find an example polybar config [here](polybar-config.ini), if you want to just copy it straight into
