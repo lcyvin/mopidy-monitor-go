@@ -15,11 +15,16 @@ var (
   client *mpd.Client
 )
 
+//Result is a communication struct for chans and rpc requests
+// Err will be populated if a func encounters an error in execution
+// Msgs will contain any debug or other output
 type Result struct {
   Err error
   Msgs []string
 }
 
+// Step is a struct which provides a Value to volume functions
+// to control the amount by which volume is changed
 type Step struct {
   Value int
 }
@@ -48,6 +53,7 @@ func (v *Volume) get() error {
 func (v *Volume) Increment(s *Step, res *Result) error {
   err := v.get()
   if err != nil {
+    res.Err = err
     return err
   }
 
@@ -57,6 +63,7 @@ func (v *Volume) Increment(s *Step, res *Result) error {
   }
   err = client.SetVolume(vol)
   if err != nil {
+    res.Err = err
     return err
   }
 
@@ -69,6 +76,8 @@ func (v *Volume) Increment(s *Step, res *Result) error {
 func (v *Volume) Decrement(s *Step, res *Result) error {
   err := v.get()
   if err != nil {
+    res.Err = err
+    return err
   }
 
   vol := v.value - s.Value
@@ -78,7 +87,27 @@ func (v *Volume) Decrement(s *Step, res *Result) error {
   err = client.SetVolume(vol)
   v.get()
   if err != nil {
+    res.Err = err
+    return err
+  }
 
+  return nil
+}
+
+// SeekTime is used by rpc clients to control the amount forward/backward to be seeked
+type SeekTime struct {
+  Amount time.Duration
+}
+
+// Seek implements functions for seeking forward/backward in a playing track
+type Seek struct {}
+
+// Seek forward/backward by an amount specified in  SeekTime
+func (s *Seek) Jump(st *SeekTime, res *Result) error {
+  err := client.SeekCur(st.Amount, true)
+  if err != nil {
+    res.Err = err
+    return err
   }
 
   return nil
@@ -107,7 +136,9 @@ func init() {
 
 func main() {
   vol := new(Volume)
+  seek := new(Seek)
   rpc.Register(vol)
+  rpc.Register(seek)
   rpc.HandleHTTP()
   l, e := net.Listen("tcp", ":9834")
   if e != nil {
