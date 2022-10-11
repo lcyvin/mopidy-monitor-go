@@ -11,6 +11,7 @@ Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related c
 ### Usage
 You can find an example polybar config [here](polybar-config.ini), if you want to just copy it straight into
 your config file. Don't forget to add the modules to your bar config, eg:
+
 `modules-right = [...] mpd mopidy-volume mopidy-seek-backward mopidy-seek-forward [...]`
 
 If the module gives an error or does not render, ensure that the server and client were installed into your user's ~/.local/bin folder.
