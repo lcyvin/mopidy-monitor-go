@@ -1,9 +1,12 @@
 # polybar-mopidy-volume-monitor
-## A simple go program that monitors volume change events in mopidy/MPD for use in polybar
+## A simple go program that monitors volume change events in mopidy/MPD for use in polybar. Can also be used to skip forward/back in podcasts and songs
 
 <p align="center">
   <img max-height="500px" src="https://github.com/lcyvin/polybar-mopidy-volume-monitor/blob/main/example.png?raw=true" alt="i3wm with polybar showing a music player and the corresponding polybar output with application-specific volume and skip forward/backward buttons"/>
 </p>
+
+### Motivation
+Polybar's built-in MPD module handles the bulk of needs for mopidy-related controls, however, it lacks a few features like static time skipping (polybar's implementation is percentage based) and volume level control. Because mopidy tends to skew a bit louder than the rest of the programs on my computer, I like to manage its volume independantly. And as I use it for podcasts as well as music, being able to skip forward in 30 second intervals allows for a much more pleasant listening experience. This project aims to solve those specific gaps, not replace the existing mpd module. 
 
 ### Usage
 In your polybar config, add:
