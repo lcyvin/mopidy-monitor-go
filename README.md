@@ -10,7 +10,7 @@ Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related c
 
 ## Installation Options
 ### - Install script
-copy the following and run it in your terminal
+copy one of the following and run it in your terminal
 
 #### non-interactive (installs to ~/.local/bin)
 ```sh
