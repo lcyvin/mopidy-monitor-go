@@ -26,6 +26,8 @@ exec-if line is part of a sh command and not a polybar comment)
 If you want to add seek forward/backward buttons (eg, for skipping thru a podcast), refer to the following example:
 ```ini
 ; using individual modules as opposed to one module with a huge format string to keep things clean
+; exec is set to echo " " so that the icon will show up, otherwise polybar will see no output
+; and not render the module
 [module/mopidy-seek-backward]
 type = custom/script
 exec = echo " "
