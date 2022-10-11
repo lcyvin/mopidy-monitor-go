@@ -9,6 +9,12 @@
 Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related controls, however, it lacks a few features like static time skipping (polybar's implementation is percentage based) and volume level control. Because mopidy tends to skew a bit louder than the rest of the programs on my computer, I like to manage its volume independently. Additionally, as I use mopidy for podcasts as well as music, being able to skip forward in set *n*-second intervals allows for a much more pleasant listening experience. This project aims to solve those specific gaps, not replace the existing mpd module. 
 
 ### Usage
+You can find an example polybar config [here](polybar-config.ini), if you want to just copy it straight into
+your config file. Don't forget to add the modules to your bar config, eg:
+`modules-right = [...] mpd mopidy-volume mopidy-seek-backward mopidy-seek-forward [...]`
+
+If the module gives an error or does not render, ensure that the server and client were installed into your user's ~/.local/bin folder.
+
 In your polybar config, add:
 ```ini
 [module/mopidy-volume]
@@ -49,6 +55,6 @@ click-right = /path/to/mopidy-volume-control seek -f -t 10
 
 ### Installation
 1. Clone this repository
-2. `cd` into the cloned repo and run `make install`
+2. `cd` into the cloned repo and run `make install` as your user, not root
 3. Ensure `~/.local/bin` is on your `$PATH`
 4. That's it, you're done, test things out and update your polybar config to your liking.
