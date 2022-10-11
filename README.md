@@ -16,7 +16,7 @@ type = custom/script
 exec = "killall mopidy-volume-server &> /dev/null; /path/to/mopidy-volume-executable"
 exec-if = pgrep -x mopidy; or mpd, setting this ensures the module doesn't show up if mopidy/mpd isn't running
 tail = true
-label = (%output%%); %output% is the token for the stdout values, the second percent and parens are just formatting
+label = (%output%%); results in (XX%) output
 scroll-up = /path/to/mopidy-volume-control volume -i --step 2; step arg is optional, default is 2
 scroll-down = /path/to/mopidy-volume-control volume -d --step 2
 ```
