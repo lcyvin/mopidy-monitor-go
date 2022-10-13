@@ -40,20 +40,25 @@ func volumeCmd() {
 	}
 	mcli.Parse(&args)
 
-	if args.Step == 0 {
-		args.Step = 2
-	}
-
 	if args.Inc && args.Dec {
 		log.Fatal("Either inc OR dec should be set, not both")
 	} else if (args.Inc || args.Dec) && args.Step < 0 {
 		log.Fatal("Either use absolute value for step and pass inc/dec flag, or remove inc/dec flag")
+	} else if !(args.Inc || args.Dec) && args.Step == 0 {
+    // This should be a no-op
+    mcli.PrintHelp()
+    return
+  }
+
+	if args.Step == 0 {
+		args.Step = 2
 	}
 
 	var cmd string
 	if args.Dec {
 		cmd = "Volume.Decrement"
 	} else if args.Step < 0 {
+    args.Step = args.Step * -1
 		cmd = "Volume.Decrement"
 	} else {
 		cmd = "Volume.Increment"
@@ -75,14 +80,18 @@ func seekCmd() {
 	}
 	mcli.Parse(&args)
 
-	if args.Interval == 0 {
-		args.Interval = 10
-	}
-
 	if args.Forward && args.Backward {
 		log.Fatal("Either forward OR backward should be set, not both")
 	} else if (args.Forward || args.Backward) && args.Interval < 0 {
 		log.Fatal("Either use absolute value for interval and pass forward/backward flag, or remove forward/backward flag")
+	} else if !(args.Forward || args.Backward) && args.Interval == 0 {
+    // This should be a no-op, print the help
+    mcli.PrintHelp()
+    return
+  }
+
+	if args.Interval == 0 {
+		args.Interval = 10
 	}
 
 	var i int
