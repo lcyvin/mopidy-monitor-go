@@ -11,7 +11,7 @@ Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related c
 ## Installation Options
 
 
-### Note: the pre-compiled binaries target amd64/linux
+### Note: the pre-compiled binaries and install scripts target amd64/linux
 ### - Install script
 copy one of the following and run it in your terminal
 
