@@ -6,9 +6,12 @@
 </p>
 
 ## Motivation
-Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related controls, however, it lacks a few features like static time skipping (polybar's implementation is percentage based) and volume level control. Because mopidy tends to skew a bit louder than the rest of the programs on my computer, I like to manage its volume independently. Additionally, as I use mopidy for podcasts as well as music, being able to skip forward in set *n*-second intervals allows for a much more pleasant listening experience. This project aims to solve those specific gaps, not replace the existing mpd module. 
+Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related controls, however, it lacks a few features like static time skipping (polybar's implementation is percentage based) and volume level control. Because mopidy tends to skew a bit louder than the rest of the programs on my computer, I like to manage its volume independently. Additionally, as I use mopidy for podcasts as well as music, being able to skip forward in set *n*-second intervals allows for a much more pleasant listening experience. This project aims to solve those specific gaps, not replace the existing mpd module. Additionally, I do not love my logs being cluttered with mpc connect/disconnect messages, so using a consistently connected server cleans up logs as an added bonus. 
 
 ## Installation Options
+
+
+### Note: the pre-compiled binaries and install scripts target amd64/linux
 ### - Install script
 copy one of the following and run it in your terminal
 
