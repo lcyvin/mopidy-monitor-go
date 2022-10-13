@@ -9,6 +9,9 @@
 Polybar's built-in MPD module handles the bulk of needs for mopidy/mpd-related controls, however, it lacks a few features like static time skipping (polybar's implementation is percentage based) and volume level control. Because mopidy tends to skew a bit louder than the rest of the programs on my computer, I like to manage its volume independently. Additionally, as I use mopidy for podcasts as well as music, being able to skip forward in set *n*-second intervals allows for a much more pleasant listening experience. This project aims to solve those specific gaps, not replace the existing mpd module. 
 
 ## Installation Options
+
+
+### Note: the pre-compiled binaries target amd64/linux
 ### - Install script
 copy one of the following and run it in your terminal
 
