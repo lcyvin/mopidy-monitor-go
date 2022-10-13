@@ -21,8 +21,8 @@ then
   mkdir -p "$INSTALLDIR"
 fi
 
-wget -O "$INSTALLDIR/mopidy-control-go" https://github.com/lcyvin/mopidy-monitor-go/releases/download/0.5/mopidy-control-go
-wget -O "$INSTALLDIR/mopidy-monitor-go" https://github.com/lcyvin/mopidy-monitor-go/releases/download/0.5/mopidy-monitor-go
+wget -O "$INSTALLDIR/mopidy-control-go" https://github.com/lcyvin/mopidy-monitor-go/releases/download/0.5.1/mopidy-control-go
+wget -O "$INSTALLDIR/mopidy-monitor-go" https://github.com/lcyvin/mopidy-monitor-go/releases/download/0.5.1/mopidy-monitor-go
 chmod +x "$INSTALLDIR/mopidy-monitor-go"
 chmod +x "$INSTALLDIR/mopidy-control-go"
 
